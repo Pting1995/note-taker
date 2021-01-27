@@ -35,7 +35,7 @@ app.post("/api/notes", (req, res) => {
         // new notes = req.body
 
         db.push(req.body);
-        var j = 0;
+        var j = 1;
         for (var i = 0; i < db.length; i++) {
 
             const newNote = {
@@ -63,10 +63,9 @@ app.delete("/api/notes/:id", (req, res) => {
         const dbArray = [];
 
         console.log(req.body)
-        var j = 0;
+        var j = 1;
         for (var i = 0; i < db.length; i++) {
-
-            if (i !== id) {
+            if (i !== id - 1) {
                 const newNote = {
                     title: db[i].title,
                     text: db[i].text,
